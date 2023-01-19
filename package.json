@@ -1,0 +1,24 @@
+{
+  "name": "handle-multiple-request",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "PAWIT,0-ab",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.1.0",
+    "axios": "^1.2.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^3.3.0",
+    "node-telegram-bot-api": "^0.61.0",
+    "nodemon": "^1.19.4",
+    "randomstring": "^1.2.3",
+    "serve-index": "^1.9.1"
+  }
+}
