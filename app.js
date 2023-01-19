@@ -72,8 +72,15 @@ bot.onText(/\/pin(.+)/, (msg, match) => {
     const chatId = msg.chat.id;
 
      const doc = 'READ.txt'
-     
-
+     const file = 'files/file.txt'
+    try {
+      const chatId = msg.chat.id;
+      bot.sendDocument(chatId,file)
+    } catch (error) {
+      const chatId = msg.chat.id;
+      bot.sendMessage(chatId,error);
+    } 
+         
      bot.sendContact(chatId,`+917498553750`,`Pawit Sahare [Admin]`)
      var options = ['Yes I love', 'No', 'Never'];
     // send a message to the chat acknowledging receipt of their message
@@ -121,7 +128,7 @@ try {
         const path = `${__dirname}/files/file.txt`;
         const filePath = fs.createWriteStream(path);
         res.pipe(filePath);
-        bot.sendMessage('Downloading . . .');
+        bot.sendMessage( chatId, 'Downloading . . .');
         filePath.on('finish', () => {
             filePath.close();
             bot.sendMessage(chatId, `Download Completed Now go to this link ${process.env.DOMAIN_NAME} `);
@@ -129,6 +136,8 @@ try {
     });
     
 } catch (error) {
+   const chatId = msg.chat.id;
+    bot.sendMessage(chatId,error);
     console.log("This is not a Link");
     fs.writeFile('error.txt', error, function(err){
         if(err){
@@ -147,8 +156,13 @@ bot.sendMessage('If you notice link invailad you can see logs by using /error')
 
   bot.on('message', (msg) => {
     const chatId = msg.chat.id;
-    const docsa = 'error.txt'
+   
     // send a message to the chat acknowledging receipt of their message
+  try {
+   const docsa = 'error.txt'
     bot.sendDocument(chatId,docsa)
+  } catch (error) {
+    console.log(error)
+  }  
     bot.sendMessage(chatId, 'NOTE - IF ERROR I SEND A ERROR FILE READ \n If not enjoy');
   });
