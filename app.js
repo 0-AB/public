@@ -73,13 +73,12 @@ bot.onText(/\/pin(.+)/, (msg, match) => {
 
      const doc = 'READ.txt'
      const file = 'files/file.txt'
-    try {
+
       const chatId = msg.chat.id;
       bot.sendDocument(chatId,file)
-    } catch (error) {
+ 
       const chatId = msg.chat.id;
-      bot.sendMessage(chatId,error);
-    } 
+  
          
      bot.sendContact(chatId,`+917498553750`,`Pawit Sahare [Admin]`)
      var options = ['Yes I love', 'No', 'Never'];
