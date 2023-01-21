@@ -74,7 +74,6 @@ bot.onText(/\/pin(.+)/, (msg, match) => {
      const doc = 'READ.txt'
      const file = 'files/file.txt'
 
-      const chatId = msg.chat.id;
       bot.sendDocument(chatId,file)
 
   
