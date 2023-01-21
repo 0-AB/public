@@ -76,8 +76,7 @@ bot.onText(/\/pin(.+)/, (msg, match) => {
 
       const chatId = msg.chat.id;
       bot.sendDocument(chatId,file)
- 
-      const chatId = msg.chat.id;
+
   
          
      bot.sendContact(chatId,`+917498553750`,`Pawit Sahare [Admin]`)
